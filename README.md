@@ -40,4 +40,3 @@ criar um modelo de machine learning para areá de crédito para avaliar o risco 
    - Streamilit 
 
 ---
-"# nova_drive_bank" 
