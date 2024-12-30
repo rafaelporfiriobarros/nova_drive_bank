@@ -23,10 +23,10 @@ criar um modelo de machine learning para areá de crédito para avaliar o risco 
 
 ## 🤖 Detalhes do Modelo de Machine Learning
 
-- **O modelo de Machine Learning pode ser treinado diretamente com os dados do sistema de concessão de crédito.**
-- **É necessário um desempenho mínimo para o modelo. A precisão mímima para o modelo ser útil é de 70%, mas espera-se pelo menos 80%.** 
-- **O recall mínimo também é de 70%, mas espera-se ter pelo menos 75%.**
-- **O limiar de decisão para as métricas de avaliação do modelo é de 50%, mas seria ideal ajustar esse limiar para refletir o custo de erro, tornando o modelo mais conservador ou não, de acordo com as necessidades da empresa.**
+- O modelo de Machine Learning pode ser treinado diretamente com os dados do sistema de concessão de crédito.
+- É necessário um desempenho mínimo para o modelo. A precisão mímima para o modelo ser útil é de 70%, mas espera-se pelo menos 80%. 
+- O recall mínimo também é de 70%, mas espera-se ter pelo menos 75%.
+- O limiar de decisão para as métricas de avaliação do modelo é de 50%, mas seria ideal ajustar esse limiar para refletir o custo de erro, tornando o modelo mais conservador ou não, de acordo com as necessidades da empresa.
 
 ---
 
