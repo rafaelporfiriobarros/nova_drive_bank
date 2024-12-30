@@ -4,7 +4,7 @@ import psycopg2
 
 def fetch_data_from_db(sql_query):
     try:
-        with open('config.yaml', 'r') as file:
+        with open('../config.yaml', 'r') as file:
             config = yaml.safe_load(file)
 
         con = psycopg2.connect(
