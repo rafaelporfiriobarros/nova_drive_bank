@@ -40,3 +40,5 @@ criar um modelo de machine learning para areá de crédito para avaliar o risco 
    - Streamilit 
 
 ---
+
+⚙️🔧 Desenvolvimento em andamento...
