@@ -49,7 +49,6 @@ X = df.drop('classe', axis=1)
 y = df['classe']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, 
                                                     random_state=seed)
-
 # Normalização
 X_test = save_scalers(X_test, ['tempoprofissao','renda','idade',
                                'dependentes','valorsolicitado','valortotalbem','proporcaosolicitadototal'])
@@ -65,7 +64,8 @@ X_train = save_encoders(X_train, ['profissao', 'tiporesidencia',
 X_test = save_encoders(X_test, ['profissao', 'tiporesidencia', 
                                 'escolaridade','score','estadocivil','produto'])
 
-'''# Seleção de Atributos
+
+# Seleção de Atributos
 model = RandomForestClassifier()
 # Instancia o RFE
 selector = RFE(model, n_features_to_select=10, step=1)
@@ -73,9 +73,9 @@ selector = selector.fit(X_train, y_train)
 # Transforma os dados
 X_train = selector.transform(X_train)
 X_test = selector.transform(X_test)
-joblib.dump(selector, './objects/selector.joblib')'''
+joblib.dump(selector, './objects/selector.joblib')
 
-model = tf.keras.models.Sequential([
+model = tf.keras.Sequential([
     tf.keras.layers.Dense(128, activation='relu', input_shape=(X_train.shape[1],)),
     tf.keras.layers.Dropout(0.3),
     tf.keras.layers.Dense(64, activation='relu'),
@@ -84,21 +84,25 @@ model = tf.keras.models.Sequential([
     tf.keras.layers.Dropout(0.3),
     tf.keras.layers.Dense(1, activation='sigmoid')
 ])
-
 # Configurando o otimizador
 optimizer = tf.keras.optimizers.Adam(learning_rate=0.001)
-
 # Compilando o modelo
 model.compile(optimizer=optimizer, loss='binary_crossentropy', metrics=['accuracy'])
 
-# Treinamento do modelo
-model.fit(X_train, y_train, validation_split=0.2, epochs=500, batch_size=10, verbose=1)
-
+# Treinamento do modelo 
+model.fit(
+    X_train,
+    y_train,
+    validation_split=0.2,  # Usa 20% dos dados para validação
+    epochs=500,  # Número máximo de épocas
+    batch_size=10,
+    verbose=1
+)
 model.save('meu_modelo.keras')
 
 # Previsões
 y_pred = model.predict(X_test)
-y_pred = (y_pred > 0.5).astype(int)
+y_pred = (y_pred > 0.5).astype(int)  
 
 # Avaliando o modelo
 print("Avaliação do Modelo nos Dados de Teste:")
@@ -108,33 +112,4 @@ model.evaluate(X_test, y_test)
 print("\nRelatório de Classificação:")
 print(classification_report(y_test, y_pred))
 
-# Função de Previsão Ajustada para LIME
-def model_predict(data_asarray):
-    data_asframe = pd.DataFrame(data_asarray, columns=X_train.columns)
-    data_asframe = save_scalers(data_asframe, ['tempoprofissao', 'renda', 'idade', 'dependentes', 'valorsolicitado', 'valortotalbem', 'proporcaosolicitadototal'])
-    data_asframe = save_encoders(data_asframe, ['profissao', 'tiporesidencia', 'escolaridade', 'score', 'estadocivil', 'produto'])
-    predictions = model.predict(data_asframe)
-    return np.hstack((1-predictions, predictions))
 
-import lime
-import lime.lime_tabular
-
-# cria explainer
-explainer = lime.lime_tabular.LimeTabularExplainer(X_train.values, 
-                feature_names=X_train.columns, class_names=['ruim', 'bom'], mode='classification')
-
-exp = explainer.explain_instance(X_test.values[1], model_predict, num_features=10)
-
-#gera html
-exp.save_to_file('lime_explanation.html')
-
-print('\nImprimindo os recursos e seus pesos para Bom')
-if 1 in exp.local_exp:
-    for feature, weight in exp.local_exp[1]:
-        print(f"{feature}: {weight}")
-
-
-print("\nAcessar os valores das features e seus pesos para Bom")
-feature_importances = exp.as_list(label=1)
-for feature, weight in feature_importances:
-    print(f"{feature}: {weight}")
