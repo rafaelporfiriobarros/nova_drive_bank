@@ -41,4 +41,7 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
 
 ---
 
-## ⚙️🔧 Desenvolvimento em andamento...
+## webapp streamlit rodando na aws
+
+![webapp_streamlit_aws](images/webapp_run_aws.jpg)
+
