@@ -38,6 +38,7 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
    - Pandas  
    - Matplotlib
    - Streamilit 
+   - AWS EC2
 
 ---
 
