@@ -44,8 +44,9 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
 
 ![webapp_streamlit_aws](images/webapp_run_aws.jpg)
 
--- Na AWS foi criada uma instância no EC2 para disponibilizar o webapp do streamlit conforme a imagem. 
+- Na AWS foi criada uma instância no EC2 para disponibilizar o webapp do streamlit conforme a imagem. 
 
+---
 
 ## 🛠️ Ferramentas Utilizadas:
 
