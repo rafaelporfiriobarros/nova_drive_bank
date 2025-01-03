@@ -28,6 +28,16 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
 - O recall mínimo também é de 70%, mas espera-se ter pelo menos 75%.
 - O limiar de decisão para as métricas de avaliação do modelo é de 50%, mas seria ideal ajustar esse limiar para refletir o custo de erro, tornando o modelo mais conservador ou não, de acordo com as necessidades da empresa.
 
+## 📝 Detalhes sobre os principais arquivos do projeto
+
+- O arquivo modelcreation.py é o principal arquivo do projeto, nele foram criados as principais ações sobre consultar os dados no banco de dados externo, a criação de funções para tratar erros, os outliers, dividir os dados em treino e teste, fazer normalização, e criar o modelo do tensorflow keras, e também criar o joblib para a implementação do flask.
+
+- O arquivo utils.py são funções de acesso ao banco de dados e funções organizadas sobre tratamento de dados nulos, corrigir erros de digitação, tratar outliers, funções sobre o StandScaler e LabelEncoder e carregamento delas.
+
+- O arquivo api.py é sobre a criação do projeto com o Flask junto com o joblib.
+
+- O arquivo testflask.py é para fazer testes com o flask com dados novos. 
+
 ---
 
 ## 🛠️ Ferramentas Utilizadas:
