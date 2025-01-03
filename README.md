@@ -5,7 +5,7 @@
 
 A nova Drive é uma montadora de veículos nacional, que produz e exporta carros para o mundo todo.
 A empresa nova Drive Bank, que também faz parte do grupo, tem como objetivo  facilitar o acesso a crédito para futuros clientes. O Objetivo desse projeto é 
-criar um modelo de machine learning para areá de crédito para avaliar o risco de conceder crédito para um novo cliente.
+criar um modelo de machine learning para área de crédito e avaliar o risco de conceder crédito para um novo cliente.
 
 ## 🎯 Objetivos do Projeto
 

@@ -1,3 +1,10 @@
 novadrivebank
 src/config.yaml
 config.yaml
+src/meu_modelo.keras
+src/objects/*
+!src/objects/.gitkeep
+
+meu_modelo.keras
+objects/*
+!objects/.gitkeep
