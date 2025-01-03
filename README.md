@@ -58,3 +58,10 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
    - Streamilit 
    - AWS EC2
 
+--- 
+
+## 📖 Curso Udemy - Fernando Amaral
+Consulte o [link](https://www.udemy.com/course/bootcamp-ciencia-de-dados-projeto-real/?couponCode=NEWYEARCAREER) para mais informações.
+
+
+
