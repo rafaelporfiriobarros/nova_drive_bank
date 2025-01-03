@@ -40,6 +40,13 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
 
 ---
 
+## ✅ Webapp Streamlit rodando na Aws
+
+![webapp_streamlit_aws](images/webapp_run_aws.jpg)
+
+-- Na AWS foi criada uma instância no EC2 para disponibilizar o webapp do streamlit conforme a imagem. 
+
+
 ## 🛠️ Ferramentas Utilizadas:
 
    - Flask
@@ -49,12 +56,4 @@ criar um modelo de machine learning para área de crédito e avaliar o risco de 
    - Matplotlib
    - Streamilit 
    - AWS EC2
-
----
-
-## ✅ Webapp Streamlit rodando na Aws
-
-![webapp_streamlit_aws](images/webapp_run_aws.jpg)
-
--- Na AWS foi criada uma instância no EC2 para disponibilizar o webapp do streamlit conforme a imagem. 
 
